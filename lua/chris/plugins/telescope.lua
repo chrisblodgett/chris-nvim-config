@@ -14,11 +14,9 @@ return {
         return vim.fn.executable 'make' == 1
       end,
     },
-    {'nvim-telescoe/telescope-ui-select.nvim' },
     -- useful for getting nice icons need to have a nerd font to enable :) 
     {'nvim-tree/nvim-web-devicons', enabled = vim.g.have_nerd_font },
-  }--dependencies
-
+  },--dependencies
     config = function()
 
       local telescope = require('telescope')
@@ -37,14 +35,14 @@ return {
          },
         },
       })
-      telescope.load_extension('fzf'),
+      telescope.load_extension('fzf')
 
       local keymap = vim.keymap -- thanks Josean again
 
-      keymap.set('n', '<leader>ff', '<cmd>telescope find_files<cr>', { desc = '[F]ind [F]iles fuzzily' })
-      keymap.set('n', '<leader>fr', '<cmd>telescope oldfiles<cr>', { desc = '[F]ind [R}ecent files fuzzily' })
-      keymap.set('n', '<leader>fs', '<cmd>telescope live_grep<cr>', { desc = '[F]ind [S]tring in cwd' })
-      keymap.set('n', '<leader>fc', '<cmd>telescope grep_string<cr>', { desc = '[F]ind [C]ursor string in cwd'})
+      keymap.set('n', '<leader>ff', '<cmd>Telescope find_files<cr>', { desc = '[F]ind [F]iles fuzzily' })
+      keymap.set('n', '<leader>fr', '<cmd>Telescope oldfiles<cr>', { desc = '[F]ind [R}ecent files fuzzily' })
+      keymap.set('n', '<leader>fs', '<cmd>Telescope live_grep<cr>', { desc = '[F]ind [S]tring in cwd' })
+      keymap.set('n', '<leader>fc', '<cmd>Telescope grep_string<cr>', { desc = '[F]ind [C]ursor string in cwd'})
     end,
 }
 
