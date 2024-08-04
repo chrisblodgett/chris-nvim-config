@@ -12,7 +12,7 @@ opt.relativenumber = true
 vim.g.have_nerd_font = true
 
 -- turn off word wrap
-opt.wrap = false
+opt.wrap = true
 
 --enable mouse mode 
 opt.mouse = 'a'
