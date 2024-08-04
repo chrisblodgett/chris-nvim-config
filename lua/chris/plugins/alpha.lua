@@ -37,7 +37,7 @@ dashboard.section.buttons.val = {
     else
       greeting = "  🌙  Good night!"
     end
-dashboard.section.footer.val = greeting
+dashboard.section.footer.val = read_ascii_art(config_path .. "/alpha_footer.txt")
 -- Set footer
 --   NOTE: This is currently a feature in my fork of alpha-nvim (opened PR #21, will update snippet if added to main)
 --   To see test this yourself, add the function as a dependecy in packer and uncomment the footer lines
