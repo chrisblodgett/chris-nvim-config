@@ -11,7 +11,7 @@ opt.relativenumber = true
 -- indicate yes I have nerd font installed 
 vim.g.have_nerd_font = true
 
--- turn off word wrap
+-- turn on word wrap
 opt.wrap = true
 
 --enable mouse mode 

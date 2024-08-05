@@ -4,24 +4,31 @@ return {
     config = function ()
       local alpha = require("alpha")
       local dashboard = require("alpha.themes.dashboard")
--- Set header
-local function read_ascii_art(file_path)
+    local function read_ascii_art(file_path)
     local lines = {}
-    for line in io.lines(file_path) do
+    local file = io.open(file_path, "r")
+    if not file then
+      return lines
+    end
+
+    for line in file:lines() do
         table.insert(lines, line)
     end
+    file.close()
     return lines
-end
+    end
 local config_path = vim.api.nvim_call_function('stdpath', {'config'})
 local file_path = config_path .. "/alpha_header.txt"
 local ascii_art_lines = read_ascii_art(file_path)
+-- Set header
 dashboard.section.header.val = ascii_art_lines
 -- Set menu
 dashboard.section.buttons.val = {
-    dashboard.button( "e", "  > New file" , ":ene <BAR> startinsert <CR>"),
-    dashboard.button( "f", "󰥨  > Find file", ":cd $HOME | Telescope find_files<CR>"),
-    dashboard.button( "r", "  > Recent"   , ":Telescope oldfiles<CR>"),
-    dashboard.button( "s", "  > Settings" , ":e $MYVIMRC | :cd %:p:h | split . | wincmd k | pwd<CR>"),
+    dashboard.button( "e", "  > New File" , ":ene <BAR> startinsert <CR>"),
+    dashboard.button( "SPC ee", "󰥨  > Toggle File Explorer", "<cmd>NvimTreeToggle<CR>"),
+    dashboard.button( "SPC ff", "󰈞  > Find File", "<cmd>Telescope find_files<CR>"),
+    dashboard.button( "SPC fs", "  > Find Word", "<CMD>Telescope live_grep<CR>"),
+    dashboard.button( "SPC wr", "  > Restore Session For Current Directory","<CMD>SessionRestore<CR>"),
     dashboard.button( "q", "󰈆  > Quit NVIM", ":qa<CR>"),
 }
     local greeting
@@ -37,23 +44,10 @@ dashboard.section.buttons.val = {
     else
       greeting = "  🌙  Good night!"
     end
-dashboard.section.footer.val = read_ascii_art(config_path .. "/alpha_footer.txt")
--- Set footer
---   NOTE: This is currently a feature in my fork of alpha-nvim (opened PR #21, will update snippet if added to main)
---   To see test this yourself, add the function as a dependecy in packer and uncomment the footer lines
---   ```init.lua
---   return require('packer').startup(function()
---       use 'wbthomason/packer.nvim'
---       use {
---           'goolord/alpha-nvim', branch = 'feature/startify-fortune',
---           requires = {'BlakeJC94/alpha-nvim-fortune'},
---           config = function() require("config.alpha") end
---       }
---   end)
---   ```
--- local fortune = require("alpha.fortune") 
--- dashboard.section.footer.val = fortune()
+ascii_art_lines = read_ascii_art(config_path .. "/alpha_footer.txt")
+table.insert(ascii_art_lines, greeting)
 
+dashboard.section.footer.val = ascii_art_lines
 -- Send config to alpha
 alpha.setup(dashboard.opts)
 

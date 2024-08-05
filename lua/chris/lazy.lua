@@ -12,4 +12,14 @@ if not vim.uv.fs_stat(lazypath) then
 end ---@diagnostic disable-next-line: undefined-field
 vim.opt.rtp:prepend(lazypath)
 
-require('lazy').setup("chris.plugins") -- load all the plugins in here
+require('lazy').setup("chris.plugins", {
+  checker = {
+    enabled = true, -- enalbe auto checking for updates
+    notify = false,
+  },
+  change_detection = { 
+    notify = false,
+  },
+
+
+})
