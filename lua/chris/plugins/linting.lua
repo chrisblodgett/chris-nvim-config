@@ -28,7 +28,7 @@ return {
 
 		vim.keymap.set(
 			"n",
-			"<leader>l",
+			"<leader>L",
 			":w<CR>", --just write the file to trigger the linter
 			{ noremap = true, silent = true, desc = "<L>int File" }
 		)
