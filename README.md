@@ -5,7 +5,7 @@ Here is my neovim config and plugins!! enjoy
 _    _  __     __ _____  __  __
 | \ | | \ \   / /|_   _||  \/  |
 |  \| |  \ \ / /   | |  | |\/| |
-| |\  |   \ V /   _| |_ | |  | |
+| \     \ V /   _| |_ | |  | |
 |_| \_|    \_/   |_____||_|  |_|
 
 ├── README.md
@@ -37,7 +37,7 @@ _    _  __     __ _____  __  __
             │   ├── lspconfig.lua
             │   └── mason.lua
             ├── lualine.lua
-            ├── maximize.lua
+            ├── maximize.lua 
             ├── mini.lua
             ├── nvim-cmp.lua
             ├── nvim-tree.lua
@@ -46,4 +46,4 @@ _    _  __     __ _____  __  __
             ├── treesitter.lua
             ├── trouble.lua
             └── which-key.lua
-```
+``

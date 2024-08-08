@@ -23,7 +23,7 @@ return {
 			ensure_installed = {
 				"pyright",
 				"lua_ls", --'html' these muse exist in the lspconfig.lua server list
-				"marksman", --'html' these muse exist in the lspconfig.lua server list
+				--	"marksman", --'markdown' these muse exist in the lspconfig.lua server list
 			},
 		})
 		mason_tool_installer.setup({

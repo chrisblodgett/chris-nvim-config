@@ -107,9 +107,7 @@ return {
 		local servers = {
 			-- clangd = {}, -- the C lsp
 			-- gopls = {},
-			marksman = {
-				filetypes = { "markdown", "md", "markdown.mdx" },
-			},
+			--marksman = {},
 			pyright = {
 				settings = {
 					python = {

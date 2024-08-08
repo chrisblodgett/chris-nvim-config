@@ -55,7 +55,7 @@ return {
 							buffer = "[Buffer]",
 							path = "[Path]",
 							copilot = "[Copilot]",
-							marksman = "[Marksman]",
+							--marksman = "[Marksman]",
 						})[entry.source.name]
 						return vim_item
 					end,
