@@ -1,5 +1,5 @@
--- https://github.com/neovim/nvim-lspconfig
 -- Quickstart configs for Nvim LSP
+-- https://github.com/neovim/nvim-lspconfig
 return {
 	"neovim/nvim-lspconfig",
 	event = { "BufReadPre", "BufNewFile" },
@@ -111,7 +111,7 @@ return {
 				settings = {
 					python = {
 						--pythonPath = path.join(vim.env.HOME, 'virtualenvs', 'nvim-test', 'bin', 'python'),
-						pythonPath = vim.fn.exepath("python3"), -- use the exec path of the python3
+						pythonPath = vim.fn.exepath("python3"), -- use the exec path of the python3 for the system should change to local project venv
 					},
 				},
 			}, -- pyright, the python lsp
@@ -139,7 +139,7 @@ return {
 					-- by the server configuration above. Useful when disabling
 					-- certain features of an LSP (for example, turning off formatting for tsserver)
 					server.capabilities = vim.tbl_deep_extend("force", {}, capabilities, server.capabilities or {})
-					require("lspconfig")[server_name].setup(server)
+					require("lspconfig")[server_name].setup(server) -- this will set up the lsp make sure the path is right to get modules in the above
 				end,
 			}, --handlers for configuring the lsp's
 		}) --mason lspconfig setup
