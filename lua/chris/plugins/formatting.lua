@@ -37,7 +37,7 @@ return {
 			html = { "prettier" },
 			json = { "prettier" },
 			yaml = { "prettier" },
-			markdown = { "prettier" },
+			--			markdown = { "prettier" },
 			graphql = { "prettier" },
 			liquid = { "prettier" },
 			-- Conform can also run multiple formatters sequentially

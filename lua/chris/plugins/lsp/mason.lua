@@ -23,6 +23,7 @@ return {
 			ensure_installed = {
 				"pyright",
 				"lua_ls", --'html' these muse exist in the lspconfig.lua server list
+				"marksman", --'html' these muse exist in the lspconfig.lua server list
 			},
 		})
 		mason_tool_installer.setup({
@@ -33,6 +34,7 @@ return {
 				"black", -- python formatter
 				"pylint", -- python linter
 				"eslint_d", -- webdev linter
+				"markdownlint", -- markdown linter
 			},
 		})
 	end,

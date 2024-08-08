@@ -55,6 +55,7 @@ return {
 							buffer = "[Buffer]",
 							path = "[Path]",
 							copilot = "[Copilot]",
+							marksman = "[Marksman]",
 						})[entry.source.name]
 						return vim_item
 					end,
@@ -65,7 +66,6 @@ return {
 			completion = { completeopt = "menu,menuone,noinsert" }, -- completion options
 			-- For an understanding of why these mappings were
 			-- chosen, you will need to read `:help ins-completion`
-			--
 			-- No, but seriously. Please read `:help ins-completion`, it is really good!
 			mapping = cmp.mapping.preset.insert({
 				-- Select the [n]ext item
@@ -81,7 +81,7 @@ return {
 				--['<C-y>'] = cmp.mapping.confirm { select = true },
 				-- If you prefer more traditional completion keymaps,
 				-- you can uncomment the following lines
-				["<CR>"] = cmp.mapping.confirm({ select = true }),
+				["<C-y>"] = cmp.mapping.confirm({ select = true }),
 				--['<Tab>'] = cmp.mapping.select_next_item(),
 				--['<S-Tab>'] = cmp.mapping.select_prev_item(),
 				-- Manually trigger a completion from nvim-cmp.
