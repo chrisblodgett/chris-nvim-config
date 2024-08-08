@@ -1,13 +1,13 @@
 # chris-nvim-config
 
 Here is my neovim config and plugins!! enjoy
-'''
+```
 _    _  __     __ _____  __  __
 | \ | | \ \   / /|_   _||  \/  |
 |  \| |  \ \ / /   | |  | |\/| |
 | |\  |   \ V /   _| |_ | |  | |
 |_| \_|    \_/   |_____||_|  |_|
-'''
+
 ├── README.md
 ├── alpha_footer.txt
 ├── alpha_header.txt
@@ -46,3 +46,4 @@ _    _  __     __ _____  __  __
             ├── treesitter.lua
             ├── trouble.lua
             └── which-key.lua
+```
