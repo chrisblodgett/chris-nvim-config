@@ -33,7 +33,7 @@ keymap.set("n", "<C-k>", "<C-w><C-k>", { desc = "Move focus to the upper window"
 keymap.set("n", "<leader>n", ":bn<CR>", { desc = "Next Buffer" })
 keymap.set("n", "<leader>p", ":bp<CR>", { desc = "Previous Buffer" })
 keymap.set("n", "<leader>X", ":bd<CR>", { desc = "Close Buffer" })
-
+keymap.set("n", "<leader>N", "<cmd>enew<CR>", { desc = "New Buffer" })
 -- Exit terminal mode in the builtin terminal with a shortcut that is a bit easier
 -- for people to discover. Otherwise, you normally need to press <C-\><C-n>, which
 -- is not what someone will guess without a bit more experience.

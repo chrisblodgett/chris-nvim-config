@@ -26,6 +26,11 @@ return {
 				lsp_fallback = not disable_filetypes[vim.bo[bufnr].filetype],
 			}
 		end,
+		formatters = {
+			black = {
+				prepend_args = { "-S" }, -- don't change string stuff like ' into "'s :(
+			},
+		},
 		formatters_by_ft = {
 			lua = { "stylua" },
 			javascript = { "prettier" },
@@ -37,7 +42,7 @@ return {
 			html = { "prettier" },
 			json = { "prettier" },
 			yaml = { "prettier" },
-			--			markdown = { "prettier" },
+			markdown = { "prettier" },
 			graphql = { "prettier" },
 			liquid = { "prettier" },
 			-- Conform can also run multiple formatters sequentially
